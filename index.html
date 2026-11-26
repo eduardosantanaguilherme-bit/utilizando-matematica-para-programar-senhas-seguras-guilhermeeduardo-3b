@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureKey | Gerador de Senhas</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+
+        <header class="cabecalho">
+            <div class="logo">
+                <div class="logo-icone">⌑</div>
+                <div>
+                    <h1>SECURE<span>KEY</span></h1>
+                    <p>GERADOR DE SENHAS</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-ponto"></span>
+                SISTEMA OPERACIONAL
+            </div>
+        </header>
+
+        <section class="painel-principal">
+
+            <div class="painel-titulo">
+                <div>
+                    <span class="etiqueta">01 / SEGURANÇA</span>
+                    <h2>Crie uma senha segura.</h2>
+                    <p>Personalize sua senha e proteja suas contas.</p>
+                </div>
+
+                <div class="icone-escudo">◈</div>
+            </div>
+
+            <div class="senha-area">
+                <label for="campo-senha">SUA SENHA GERADA</label>
+
+                <div class="senha-box">
+                    <input
+                        type="text"
+                        id="campo-senha"
+                        value=""
+                        readonly
+                        aria-label="Senha gerada"
+                    >
+
+                    <button id="botao-copiar" class="botao-copiar" type="button">
+                        <span id="icone-copiar">▣</span>
+                        <span id="texto-copiar">COPIAR</span>
+                    </button>
+                </div>
+
+                <div class="senha-info">
+                    <span><span class="ponto-vermelho"></span> SENHA ALEATÓRIA</span>
+                    <span id="contador-caracteres">0 CARACTERES</span>
+                </div>
+            </div>
+
+            <div class="seguranca">
+                <div class="seguranca-topo">
+                    <span class="etiqueta">NÍVEL DE SEGURANÇA</span>
+                    <span id="texto-forca" class="forca-texto">—</span>
+                </div>
+
+                <div class="barra-forca">
+                    <span class="barra-segmento"></span>
+                    <span class="barra-segmento"></span>
+                    <span class="barra-segmento"></span>
+                    <span class="barra-segmento"></span>
+                </div>
+
+                <div class="legenda-forca">
+                    <span>FRACA</span>
+                    <span>MÉDIA</span>
+                    <span>FORTE</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="painel-configuracoes">
+
+            <div class="config-titulo">
+                <div>
+                    <span class="etiqueta">02 / PERSONALIZAÇÃO</span>
+                    <h2>Configurações</h2>
+                </div>
+
+                <span class="config-numero">SETTINGS</span>
+            </div>
+
+            <div class="config-bloco tamanho-bloco">
+
+                <div class="config-topo">
+                    <div>
+                        <h3>Comprimento da senha</h3>
+                        <p>Defina quantos caracteres deseja.</p>
+                    </div>
+
+                    <div class="contador-tamanho">
+                        <span id="valor-tamanho">16</span>
+                    </div>
+                </div>
+
+                <div class="controle-tamanho">
+                    <button id="diminuir-tamanho" type="button" aria-label="Diminuir tamanho">−</button>
+
+                    <input
+                        type="range"
+                        id="slider-tamanho"
+                        min="1"
+                        max="20"
+                        value="16"
+                    >
+
+                    <button id="aumentar-tamanho" type="button" aria-label="Aumentar tamanho">+</button>
+                </div>
+
+                <div class="range-legenda">
+                    <span>01 CARACTERE</span>
+                    <span>20 CARACTERES</span>
+                </div>
+
+            </div>
+
+            <div class="config-bloco">
+
+                <div class="config-topo">
+                    <div>
+                        <h3>Características</h3>
+                        <p>Selecione os caracteres utilizados.</p>
+                    </div>
+                </div>
+
+                <div class="opcoes-grid">
+
+                    <label class="opcao">
+                        <input type="checkbox" id="maiusculo" class="checkbox" checked>
+                        <span class="opcao-visual">
+                            <span class="opcao-simbolo">A</span>
+                            <span class="opcao-texto">
+                                <strong>Maiúsculas</strong>
+                                <small>A – Z</small>
+                            </span>
+                            <span class="check-visual"></span>
+                        </span>
+                    </label>
+
+                    <label class="opcao">
+                        <input type="checkbox" id="minusculo" class="checkbox" checked>
+                        <span class="opcao-visual">
+                            <span class="opcao-simbolo">a</span>
+                            <span class="opcao-texto">
+                                <strong>Minúsculas</strong>
+                                <small>a – z</small>
+                            </span>
+                            <span class="check-visual"></span>
+                        </span>
+                    </label>
+
+                    <label class="opcao">
+                        <input type="checkbox" id="numero" class="checkbox" checked>
+                        <span class="opcao-visual">
+                            <span class="opcao-simbolo">9</span>
+                            <span class="opcao-texto">
+                                <strong>Números</strong>
+                                <small>0 – 9</small>
+                            </span>
+                            <span class="check-visual"></span>
+                        </span>
+                    </label>
+
+                    <label class="opcao">
+                        <input type="checkbox" id="simbolo" class="checkbox" checked>
+                        <span class="opcao-visual">
+                            <span class="opcao-simbolo">#</span>
+                            <span class="opcao-texto">
+                                <strong>Símbolos</strong>
+                                <small>! @ # $ %</small>
+                            </span>
+                            <span class="check-visual"></span>
+                        </span>
+                    </label>
+
+                </div>
+            </div>
+
+            <button id="botao-gerar" class="botao-gerar" type="button">
+                <span class="botao-gerar-icone">↻</span>
+                GERAR NOVA SENHA
+                <span class="botao-seta">↗</span>
+            </button>
+
+        </section>
+
+        <section class="painel-informacoes">
+
+            <div class="info-card">
+                <span class="info-icone">◈</span>
+                <div>
+                    <span class="info-label">ENTROPIA</span>
+                    <strong id="valor-entropia">0 bits</strong>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <span class="info-icone">⌛</span>
+                <div>
+                    <span class="info-label">RESISTÊNCIA ESTIMADA</span>
+                    <strong id="tempo-quebra">—</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <span>SECUREKEY <span class="footer-vermelho">/</span> PASSWORD GENERATOR</span>
+            <span>SEGURANÇA COMEÇA COM VOCÊ.</span>
+        </footer>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
